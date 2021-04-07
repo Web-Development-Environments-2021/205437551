@@ -2,179 +2,358 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css" />
+
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src='inputEmoji.js'></script>
+<script>
+  $(function () {
+    $('textarea').emoji({place: 'inside'});
+  })
+</script>
+
 </head>
 <body>
-<div id="menu">
-<li><a href="#about">About Me</a></li>
-<li><a href="#photos">My Photos</a></li>
-<li><a href="#playlist">My Playlist</a></li>
-<li><a href="#like">Like</a></li>
-<li><a href="#qrcoder">QR code</a></li>
-<li><a href="#spa">Q&A</a></li>
-<li><a href="#contact">Contact Me</a></li>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="HnE7rBgs"></script>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+  <section class="navbar" >
+      <a href="#about">About Me</a>
+      <a href="#myphotos">My Photos</a>
+      <a href="#myplaylist">My Playlist</a>
+      <a href="#like">Like</a>
+      <a href="#qrcode">QR code</a>
+   <a href="#qa">Q&A</a>
+  <a href="#contact">Contact Me</a>
+</section>
+
+    <!--====== ABOUT PART START ======-->
+  <section id="about" class="about-area">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-5">
+                  <br>
+                  <br>
+                  <br>
+                    <h2 class="title">About me</h2>
+                    <h4 class="title">Bella Osishkin</h4>
+                    <p class="text">Born in 1946 in Harkov Ukraine.
+                        <br> Lived there until 1968. 
+                        <br>Studied 5 years Radio Electronics at Harkov University.
+                        <br>Moved to Moscow, Russia for work.
+                        <br>Maid Aliya to Israel in 1991 with both her parents and her daughter.
+                        <br>Currently living in Bet Shemesh.
+                    </p>
+        </div>
+        <div class="col-lg-7">
+            <div class="about-image mt-50">
+                <img src="assets/images/album/piano.jpeg" alt="about" style="width:25%">
+            </div> <!-- faq image -->
+        </div>
+    </div> <!-- row -->
+</div> <!-- container -->
+</section>
+    <!--====== ABOUT PART ENDS ======-->
+
+    <!--====== My Photos START ======-->
+<section id="myphotos" class="myphotos-area">
+  
+                <br>
+                <br>
+                <br>
+                <div class="row">
+                  <h2 class="title">My Photos</h2>
+                  <h4 class="title">Here are some photos of me and my family</h4>
+                </div>
+                <br>
+              <h5 class="title" >Childhood</h5>
+          <div class="slideshow-container">
+            <br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
 </div>
-		  
-<section id="about" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-about me
-<br/>
-<br/>
-<br/>
+              <div class="mySlides fade">
+              <div class="numbertext">1 / 12</div>
+              
+              <img src="assets/images/album/baby.jpeg" style="width:20%">
+              <div class="text">Baby</div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 12</div>
+              <img src="assets/images/album/first_grade.jpeg" style="width:20%">
+              <div class="text">First Grade</div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 12</div>
+              <img src="assets/images/album/child2.jpeg" style="width:20%">
+              <div class="text">Child</div>
+            </div>
+          </div>
+<br>
+
+<h5 class="title" >Adolescence</h5>
+<div class="slideshow-container">
+  <br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+</div>
+                  <div class="mySlides fade">
+                    <div class="numbertext">4 / 12</div>
+                    <img src="assets/images/album/university.jpeg" style="width:20%">
+                    <div class="text">University Student</div>
+                  </div>
+      
+                  <div class="mySlides fade">
+                    <div class="numbertext">5 / 12</div>
+                    <img src="assets/images/album/working.jpeg" style="width:20%">
+                    <div class="text">First Job</div>
+                  </div>
+      
+                  <div class="mySlides fade">
+                    <div class="numbertext">6 / 12</div>
+                    <img src="assets/images/album/working2.jpeg" style="width:20%">
+                    <div class="text">Second Job</div>
+                  </div>
+                
+</div>
+<br>
+<h5 class="title" >Adulthood</h5>
+<div class="slideshow-container">
+                
+  <br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+  <span class="dot" onclick="currentSlide(9)"></span>
+</div>
+                  <div class="mySlides fade">
+                    <div class="numbertext">7 / 12</div>
+                    <img src="assets/images/album/with_daughter.jpeg" style="width:20%">
+                    <div class="text">With my daughter</div>
+                  </div>
+      
+                  <div class="mySlides fade">
+                    <div class="numbertext">8 / 12</div>
+                    <img src="assets/images/album/second_wedding.jpeg" style="width:20%">
+                    <div class="text">Wedding</div>
+                  </div>
+      
+                  <div class="mySlides fade">
+                    <div class="numbertext">9 / 12</div>
+                    <img src="assets/images/album/grand_daughter.jpeg" style="width:20%">
+                    <div class="text">With my granddaughter</div>
+                  </div>
+                
+</div>
+
+<br>
+<h5 class="title" >Recently</h5>
+
+<div class="slideshow-container">
+  <br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(10)"></span>
+  <span class="dot" onclick="currentSlide(11)"></span>
+  <span class="dot" onclick="currentSlide(12)"></span>
+</div>
+                  <div class="mySlides fade">
+                    <div class="numbertext">10 / 12</div>
+                    <img src="assets/images/album/bar_mitzva.jpeg" style="width:20%">
+                    <div class="text">My grandsons Bar-Mitzva</div>
+                  </div>
+      
+                  <div class="mySlides fade">
+                    <div class="numbertext">11 / 12</div>
+                    <img src="assets/images/album/with_husband.jpeg" style="width:20%">
+                    <div class="text">With my husband</div>
+                  </div>
+      
+                  <div class="mySlides fade">
+                    <div class="numbertext">12 / 12</div>
+                    <img src="assets/images/album/last_year.jpeg" style="width:20%">
+                    <div class="text">Last year</div>
+                  </div>            
+</div>
+<br>
+
 </section>
 
-<section id="photos" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my photos
-<br/>
-<br/>
-<br/>
-</section>
+<!--====== My Photos ENDS ======-->
 
-<section id="playlist" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my playlist
-<br/>
-<br/>
-<br/>
-</section>
+     <!--====== My Playlist PART START ======-->
 
-<section id="like" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-give me a like
-<br/>
-<br/>
-<br/>
-</section>
+     <section id="myplaylist" class="myplaylist-area">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-10">
+                  <div class="section-title text-center pb-10">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                      <h2 class="title">My Playlist</h2>
+                      <h4 class="text">Here is my favorite playlist on youtube</h4>
+                      <br>
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/NVcmGtn8phs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<section id="qrcoder" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-scan my code
-<br/>
-<br/>
-<br/>
-</section>
+                  </div> <!-- row -->
+              </div>
+          </div> <!-- row -->
+      </div> <!-- container -->
+  </section>
 
-<section id="spa" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-ans
-<br/>
-<br/>
-<br/>
-</section>
+  <!--====== My Playlist PART ENDS ======-->
+
+    <!--====== Like PART START ======-->
+
+    <section id="like" class="like area pb-100">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-10">
+                  <div class="section-title text-center pb-10">
+                    <br>
+                    <br>
+                    <br>
+                      <h2 class="title">Like us on Facebook</h2>
+                      <div class="fb-like" data-href="https://www.facebook.com/alfa4hs" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+                      <br>
+                      <br>
+                    </div> <!-- section title -->
+              </div>
+          </div> <!-- row -->
+      </div> <!-- container -->
+  </section>
+
+  <!--====== Like PART ENDS ======-->
+
+    <!--====== QR code PART START ======-->
+
+    <section id="qrcode" class="qrcode_area pb-100">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-10">
+                  <div class="section-title text-center pb-25">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                      <h2 class="title">QR code for this site</h2>
+              </div><!-- section title -->
+          <div class="row justify-content-center">
+          <img src="assets/images/qrcode.png" alt="">
+          <br>
+          <br>
+          </div>
+      </div>
+  </div>
+      </div>
+  </section>
+
+  <!--====== QR code PART ENDS ======-->
+
+    <!--====== Q&A START ======-->
+
+    <section id="qa" class="qa-area pb-100">
+      <div class="container">
+                    <br>
+                    <br>
+                    <br>
+                      <h2 class="title">Q&A</h2>
+                      <h4 class="title">Diffrences between WEB 1.0, WEB 2.0, WEB 3.0</h4>
+                <br>
+                              <h5>Amout of users</h5>
+                              <p class="text"><b>WEB 1.0:</b> Millions of users.  <br><b>WEB 2.0:</b> Billions of users. <br><b>WEB 3.0:</b> Trillions of users. </p>
+                              <br>
+                              <h5>File system permissions</h5>
+                              <p class="text"><b>WEB 1.0:</b> Read-only.  <br><b>WEB 2.0:</b> Read-Write. <br><b>WEB 3.0:</b> Read-Write-Execute. </p>
+                              <br>
+                              <h5>Focus</h5>
+                              <p class="text"><b>WEB 1.0:</b> Company focus. <br><b>WEB 2.0:</b> Community focus. <br><b>WEB 3.0:</b> Individual focus.</p>
+                              <br>
+                              <h5>Query search "Adopting a dog"</h5>
+                              <p class="text"><b>WEB 1.0:</b> Poor results, most of the them are documents. <br><b>WEB 2.0:</b> Good results, user can also search social media and information sites. <br><b>WEB 3.0:</b> Very informative results, including related sites, articles, photos, videos. Thanks to machine learning algorithms.</p>
+      </div> <!-- container -->
+  </section>
+
+  <!--====== Q&A ENDS ======-->
+
+  <!--====== Contact START ======-->
+ 
 
 <section id="contact" class="section">
 <br/>
 <br/>
+<div class="container">
+  <h2 class="title">Contact me</h2>
+  <br>
+  <form action="mailto:goldmand@post.bgu.ac.il" method="post" enctype="text/plain" role="form">
+    Name: <input type="text" name="Name" required>
+    <br>
+    <br>
+    Email: <input type="email" name="Email" required>
+    <br>
+    <br>
+    Message: <textarea id="mytextarea" name="Message" required></textarea>
+    <br>
+    <br> 
+    
+      </script>
+      <script type="text/javascript"
+      src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+  
+    <input type="submit" value="Submit">
+    </form>
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-contact me
-<br/>
-<br/>
-<br/>
+</div>
+
+
+
 </section>
 
+
+
+<!--====== Contact END ======-->
 
 <script type="text/javascript">
 $(function(){
@@ -190,4 +369,6 @@ $(function(){
  });​
  </script>
 </body>
+
+</script>
 </html>
