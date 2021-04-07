@@ -40,12 +40,14 @@ function showSlides(n) {
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
+
   }
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
+  if (n%3==1){document.getElementById("myphotos").scrollIntoView({behavior: 'smooth'});}
 }
 </script>
 
@@ -107,23 +109,19 @@ function showSlides(n) {
   <span class="dot" onclick="currentSlide(3)"></span>
 </div>
               <div class="mySlides fade">
-              <div class="numbertext">1 / 12</div>
-              
-              <img src="assets/images/album/baby.jpeg" style="width:20%">
               <div class="text">Baby</div>
+              <img src="assets/images/album/baby.jpeg" style="width:20%">
             </div>
 
             <div class="mySlides fade">
-              <div class="numbertext">2 / 12</div>
-              <img src="assets/images/album/first_grade.jpeg" style="width:20%">
               <div class="text">First Grade</div>
+              <img src="assets/images/album/first_grade.jpeg" style="width:20%">
             </div>
 
             <div class="mySlides fade">
-              <div class="numbertext">3 / 12</div>
-              <img src="assets/images/album/child2.jpeg" style="width:20%">
               <div class="text">Child</div>
-            </div>
+              <img src="assets/images/album/child2.jpeg" style="width:20%">
+              </div>
           </div>
 <br>
 
@@ -136,21 +134,18 @@ function showSlides(n) {
   <span class="dot" onclick="currentSlide(6)"></span>
 </div>
                   <div class="mySlides fade">
-                    <div class="numbertext">4 / 12</div>
-                    <img src="assets/images/album/university.jpeg" style="width:20%">
                     <div class="text">University Student</div>
+                    <img src="assets/images/album/university.jpeg" style="width:20%">
                   </div>
       
                   <div class="mySlides fade">
-                    <div class="numbertext">5 / 12</div>
-                    <img src="assets/images/album/working.jpeg" style="width:20%">
                     <div class="text">First Job</div>
+                    <img src="assets/images/album/working.jpeg" style="width:20%">
                   </div>
       
                   <div class="mySlides fade">
-                    <div class="numbertext">6 / 12</div>
-                    <img src="assets/images/album/working2.jpeg" style="width:20%">
                     <div class="text">Second Job</div>
+                    <img src="assets/images/album/working2.jpeg" style="width:20%">
                   </div>
                 
 </div>
@@ -165,21 +160,18 @@ function showSlides(n) {
   <span class="dot" onclick="currentSlide(9)"></span>
 </div>
                   <div class="mySlides fade">
-                    <div class="numbertext">7 / 12</div>
-                    <img src="assets/images/album/with_daughter.jpeg" style="width:20%">
                     <div class="text">With my daughter</div>
+                    <img src="assets/images/album/with_daughter.jpeg" style="width:20%">
                   </div>
       
                   <div class="mySlides fade">
-                    <div class="numbertext">8 / 12</div>
-                    <img src="assets/images/album/second_wedding.jpeg" style="width:20%">
                     <div class="text">Wedding</div>
+                    <img src="assets/images/album/second_wedding.jpeg" style="width:20%">
                   </div>
       
                   <div class="mySlides fade">
-                    <div class="numbertext">9 / 12</div>
-                    <img src="assets/images/album/grand_daughter.jpeg" style="width:20%">
                     <div class="text">With my granddaughter</div>
+                    <img src="assets/images/album/grand_daughter.jpeg" style="width:20%">
                   </div>
                 
 </div>
@@ -195,24 +187,20 @@ function showSlides(n) {
   <span class="dot" onclick="currentSlide(12)"></span>
 </div>
                   <div class="mySlides fade">
-                    <div class="numbertext">10 / 12</div>
-                    <img src="assets/images/album/bar_mitzva.jpeg" style="width:20%">
                     <div class="text">My grandsons Bar-Mitzva</div>
+                    <img src="assets/images/album/bar_mitzva.jpeg" style="width:20%">
                   </div>
       
                   <div class="mySlides fade">
-                    <div class="numbertext">11 / 12</div>
-                    <img src="assets/images/album/with_husband.jpeg" style="width:20%">
                     <div class="text">With my husband</div>
+                    <img src="assets/images/album/with_husband.jpeg" style="width:20%">
                   </div>
       
                   <div class="mySlides fade">
-                    <div class="numbertext">12 / 12</div>
-                    <img src="assets/images/album/last_year.jpeg" style="width:20%">
                     <div class="text">Last year</div>
+                    <img src="assets/images/album/last_year.jpeg" style="width:20%">
                   </div>            
 </div>
-<br>
 
 </section>
 
@@ -225,7 +213,6 @@ function showSlides(n) {
           <div class="row justify-content-center">
               <div class="col-lg-6 col-md-10">
                   <div class="section-title text-center pb-10">
-                    <br>
                     <br>
                     <br>
                     <br>
@@ -253,6 +240,7 @@ function showSlides(n) {
                     <br>
                     <br>
                       <h2 class="title">Like us on Facebook</h2>
+                      <br>
                       <div class="fb-like" data-href="https://www.facebook.com/alfa4hs" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
                       <br>
                       <br>
@@ -276,6 +264,7 @@ function showSlides(n) {
                     <br>
                     <br>
                       <h2 class="title">QR code for this site</h2>
+                      <br>
               </div><!-- section title -->
           <div class="row justify-content-center">
           <img src="assets/images/qrcode.png" alt="">
@@ -297,6 +286,7 @@ function showSlides(n) {
                     <br>
                     <br>
                       <h2 class="title">Q&A</h2>
+                      <br>
                       <h4 class="title">Diffrences between WEB 1.0, WEB 2.0, WEB 3.0</h4>
                 <br>
                               <h5>Amout of users</h5>
